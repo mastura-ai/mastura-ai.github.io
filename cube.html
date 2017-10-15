@@ -111,7 +111,7 @@
 			<button id="sphere">SPHERE</button>
 			<button id="helix">HELIX</button>
 			<button id="grid">GRID</button>
-			<button id="pyramid">PYRAMID</button>
+			<button id="cube">CUBE</button>
 		</div>
 
 		<script>
@@ -241,7 +241,7 @@
 			var controls;
 
 			var objects = [];
-			var targets = { table: [], sphere: [], helix: [], grid: [], pyramid: [] }; //adding pyramid
+			var targets = { table: [], sphere: [], helix: [], grid: [], cube: [] }; //adding pyramid
 
 			init();
 			animate();
@@ -396,6 +396,8 @@
 
 				// 	targets.pyramid.push( object );
 				// }
+
+				//cube
 				var vector = new THREE.Vector3();
 				for ( var i = 0; i < objects.length; i ++ ) {
 
@@ -445,7 +447,7 @@
 						object.lookAt( vector );
 					}
 
-					targets.pyramid.push( object );
+					targets.cube.push( object );
 
 				}
 
@@ -491,15 +493,27 @@
 
 				}, false );
 
-				//pyramid button
-				var button = document.getElementById( 'pyramid' );
+				//cube button
+				var button = document.getElementById( 'cube' );
 				button.addEventListener( 'click', function ( event ) {
 
-					transform( targets.pyramid, 2000 );
+					transform( targets.cube, 2000 );
 
 				}, false );
 
-				transform( targets.table, 2000 );
+				transform( targets.cube, 2000 );
+
+				//
+
+				// pyramid button
+				// var button = document.getElementById( 'pyramid' );
+				// button.addEventListener( 'click', function ( event ) {
+
+				// 	transform( targets.pyramid, 2000 );
+
+				// }, false );
+
+				// transform( targets.pyramid, 2000 );
 
 				//
 
